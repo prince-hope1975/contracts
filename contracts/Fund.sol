@@ -2,9 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
-
-contract DepositAndWithdraw {
+contract Fund {
     mapping(address => uint256) public addressToAmountFunded;
     address[] public funders;
 
