@@ -7,3 +7,4 @@ typechain
 # hardhat files
 cache
 artifacts
+yarn.lock
