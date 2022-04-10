@@ -1,31 +1,7 @@
-import { task } from "hardhat/config"
-import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
-import { BigNumber } from "ethers"
-import "@nomiclabs/hardhat-waffle"
+require("@nomiclabs/hardhat-waffle");
 
 module.exports = {
-  solidity: {
-    compilers: [
-      {
-        version: "0.5.16"
-      },
-      {
-        version: "0.6.2"
-      },
-      {
-        version: "0.6.4"
-      },
-      {
-        version: "0.7.0"
-      },
-      {
-        version: "0.7.3"
-      },
-      {
-        version: "0.8.0"
-      }
-    ]
-  },
+  solidity: "0.8.4",
   networks: {
     local: {
       url: 'http://localhost:9650/ext/bc/C/rpc',
@@ -48,13 +24,13 @@ module.exports = {
       url: 'https://api.avax-test.network/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43113,
-      accounts: []
+      accounts: [0x1E1709B6e4B216886D95bb49148Ceb23fBe049E2]
     },
     mainnet: {
       url: 'https://api.avax.network/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43114,
-      accounts: []
+      accounts: [0x1E1709B6e4B216886D95bb49148Ceb23fBe049E2]
     }
   }
 }
