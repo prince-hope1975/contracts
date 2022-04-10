@@ -1,26 +1,16 @@
-# Everest Contracts
-Contracts for Everest
+# Everest smart contracts
 
-## Install Dependencies
-If npx is not installed yet: 
-`npm install -g npx`
+## 📦 Install dependencies
+You need *node.js*, *npm* and *npx* installed.\
+Install the project's dependencies with: `$ npm i`
 
-Install packages: 
-`npm i`
-
-## Setup your env
+## 🔧 Setup your env
 Copy the sample environement file and populate it with your wallet private keys.\
-Your .env file should never be committed (it is specified in the *.gitignore*)!\
+**Your .env file should never be committed** (it is specified in the *.gitignore*)!\
 `$ cp .env.sample .env && vi .env`
 
-## Compile Contracts
-`npx hardhat compile`
+## ⚙️ Compile contracts
+Compile the smart contracts: `$ npx hardhat compile`
 
-## Deploy Contracts 
-`npx hardhat run scripts/deploy.js`
-
-## Run Contracts
-`npx hardhat run scripts/run.js`
-
-
-
+## 🚀 Deploy contracts 
+Deploy the smart contracts to a blockchain: `$ npx hardhat run scripts/deploy.js`
