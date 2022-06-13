@@ -2,15 +2,15 @@
 
 # Tutorial: BattleShip
 
-In this Tutorial, we'll walk through a simple decentralized application, the Battleship game; where two players have to try to guess the positions of each ship on a Gameboard. More on battleship [here](<https://en.wikipedia.org/wiki/Battleship_(game)>).
+In this tutorial, we'll walk through a simple decentralized application, the Battleship game; where two players have to try to guess the positions of each ship on a Gameboard. More on battleship [here](<https://en.wikipedia.org/wiki/Battleship_(game)>).
 
 This tutorial aims to give the required knowledge to build, test, and implement custom blockchain logic easily.
 
-This tutorail assumes you have completed the Rock, Paper, Scissors tutorail [here](https://docs.reach.sh/tut/rps/#tut)
+This tutorial assumes you have completed the Rock, Paper, Scissors tutorial [here](https://docs.reach.sh/tut/rps/#tut)
 
 We assume that you’ll go through this tutorial in a directory named ~/reach/tutorial-battleship:
 
-`$ mkdir -p ~/reach/tutorail-battleship`
+`$ mkdir -p ~/reach/tutorial-battleship`
 
 And that you have a copy of Reach installed in ~/reach so you can write
 
@@ -282,8 +282,8 @@ Moving on in our application implementation...
 - Line 64 begins the execution of the while loop and ends in line 112.
 - Line 65 destructures the `statement` variable and assigns individual variables to each parameter.
 - Lines 69 to 72 get Alice's hand and publish it so Bob can use it to compare with his board.
-- Lines 78 to 87; Bob gets his hand from the front end as well as doing a comparison to check if Alice's hand was correct. If it's correct Bob updates his `Ship` variable. After all the steps Bob publishes both the updated value of the ship and his hand, that is `BobShips` and `BobHand`.
-- Lines 91 to 100; Alice also does a comparison with her board and Bob's hand. After all the checks and comparisons, Alice publishes the ship varible to be used elsewhere in the applciation.
+- Lines 78 to 87, Bob gets his hand from the front end as well as doing a comparison to check if Alice's hand was correct. If it's correct Bob updates his `Ship` variable. After all the steps Bob publishes both the updated value of the ship and his hand, that is `BobShips` and `BobHand`.
+- Lines 91 to 100, Alice also does a comparison with her board and Bob's hand. After all the checks and comparisons, Alice publishes the ship varible to be used elsewhere in the applciation.
 - Lines 102 and 103 use the function declared earlier on line 30, to count and store the number of ships that have been hit on each participant board.
 - Lines 105 to 110 show how we redeclare the statement variable and input new values.
 
@@ -305,7 +305,7 @@ Our application needs a way to determine the winner and pay the total funds to t
 - Line  114 destructures all the values from the `statement` variable.
 - On line 116 we determine the outcome of the game and return stores a "true" if Alice wins and a "false" if Bob wins  
 -line 117 transfers the total amount in the contract to the winner and then performs a commit.
-- Lines 120 t0 123; each participant is notified of the outcome of the game.
+- Lines 120 t0 123, each participant is notified of the outcome of the game.
 
 And that's it with our blockchain implementation. 
 
