@@ -2,7 +2,7 @@
 
 # Tutorial: BattleShip
 
-In this Tutorail, we'll walk through a simple decentralized application, the Battleship game; where two players have to try to guess the positions of each ship on a Gameboard. More on battleship [here](<https://en.wikipedia.org/wiki/Battleship_(game)>).
+In this Tutorial, we'll walk through a simple decentralized application, the Battleship game; where two players have to try to guess the positions of each ship on a Gameboard. More on battleship [here](<https://en.wikipedia.org/wiki/Battleship_(game)>).
 
 This tutorial aims to give the required knowledge to build, test, and implement custom blockchain logic easily.
 
