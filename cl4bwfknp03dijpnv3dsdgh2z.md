@@ -112,7 +112,7 @@ Let's start by defining the processes and steps that will take place in the appl
 
 - Two participants `A` and `B` will connect to the contract.
 - `A` sets a wager and a deadline and pays the wager amount into the contract.
-- `B `accepts the wager and pays into the contract
+- `B` accepts the wager and pays into the contract
 - Both participants take turns placing their ships on a board with 100 spots.
 - The contract makes sure that `A ` doesn't know the contents of `B`'s board and vice versa.
 - `A` takes a turn trying to guess the position of the ships placed on `B`'s board.
@@ -217,7 +217,7 @@ The application is beginning to take shape. We have defined the params and helpe
 If you'd notice alice makes every other variable available but, keeps the board to only herself. The reason is Bob isn't supposed to know what is on Alice's board and vice versa. So the board of each participant mustn't be shared. 
 - Lines 46 to 49 indicate an action that only Bob performs. Bob gets the board from the front end and keeps it to himself by not publishing it. Bob also informs the front-end that the wager should be accepted by calling `interact.acceptWager(wager)`.
 - Lines 54 and 55 do a check and make sure that neither Alice nor Bob know the contents of the opponent's board. Just an extra layer of security to ensure honesty.
-- Line 58; Bob is prompted to pay the wager amount specified by Alice if he accepts the wager. The timeout method ensures that if Bob refuses to pay the wager or for some reason is unable to pay; when the timer runs out, the code block will be executed.
+- Line 58 Bob is prompted to pay the wager amount specified by Alice if he accepts the wager. The timeout method ensures that if Bob refuses to pay the wager or for some reason is unable to pay; when the timer runs out, the code block will be executed.
 
 Moving forward to the main application logic, we have a loop that will run until the application execution ends and a winner is decided. It will look something like this.
 
@@ -283,7 +283,7 @@ Moving on in our application implementation...
 - Line 65 destructures the `statement` variable and assigns individual variables to each parameter.
 - Lines 69 to 72 get Alice's hand and publish it so Bob can use it to compare with his board.
 - Lines 78 to 87, Bob gets his hand from the front end as well as doing a comparison to check if Alice's hand was correct. If it's correct Bob updates his `Ship` variable. After all the steps Bob publishes both the updated value of the ship and his hand, that is `BobShips` and `BobHand`.
-- Lines 91 to 100, Alice also does a comparison with her board and Bob's hand. After all the checks and comparisons, Alice publishes the ship varible to be used elsewhere in the applciation.
+- Lines 91 to 100, Alice also does a comparison with her board and Bob's hand. After all the checks and comparisons, Alice publishes the "ship" variable to be used elsewhere in the application.
 - Lines 102 and 103 use the function declared earlier on line 30, to count and store the number of ships that have been hit on each participant board.
 - Lines 105 to 110 show how we redeclare the statement variable and input new values.
 
@@ -304,7 +304,7 @@ Our application needs a way to determine the winner and pay the total funds to t
 ```
 - Line  114 destructures all the values from the `statement` variable.
 - On line 116 we determine the outcome of the game and return stores a "true" if Alice wins and a "false" if Bob wins  
--line 117 transfers the total amount in the contract to the winner and then performs a commit.
+- Line 117 transfers the total amount in the contract to the winner and then performs a commit.
 - Lines 120 t0 123, each participant is notified of the outcome of the game.
 
 And that's it with our blockchain implementation. 
@@ -507,7 +507,7 @@ The above code block does the following
 - On lines 17 and 18 we create two test accounts and fund them programmatically
 - On line 20 we create a `getBalance` helper function we use later in the application.
 - On lines 23 and 24 we get the balances of the accounts before they interact with the contract we wrote in the `index.rsh`.
-- On line 25 participant  `Alice   deploys the contract and Bob attaches to that contract on line 26
+- On line 25 participant  `Alice`   deploys the contract and Bob attaches to that contract on line 26
 
 Now let's define the equivalent of the `common` variable in our `index.rsh` file. We name it `Player` instead and it will mirror the `common` variable.
 The Player function will return an object and will be spread to both participant's interact objects.
@@ -705,9 +705,9 @@ In the React App navigate to `battleship-main/src/factories/playerFactory.js`. W
 1. import Gameboard from "./gameboardFactory";
 2. import * as backend from "../build/index.main.mjs";
 3. import { loadStdlib } from "@reach-sh/stdlib";
-4. /*
-5. Helper Funtions
-6. */
+4. 
+5. // Helper Funtions
+6. 
 7. const callbackFn = () => {
 8.   let fn;
 9.   const setFn = (fxn) => {
@@ -726,9 +726,9 @@ In the React App navigate to `battleship-main/src/factories/playerFactory.js`. W
 22. const Waiter = callbackFn();
 23. 
 24. const reach = loadStdlib((process.env.REACH_CONNECTOR_MODE = "ALGO"));
-25. /**
-26.  * Participant classes
-27.  */
+25. 
+26. // Participant classes
+27.  
 28. class Player {
 29.   constructor(name, acc) {
 30.     this.name = name;
@@ -812,9 +812,9 @@ In the React App navigate to `battleship-main/src/factories/playerFactory.js`. W
 108.  }
 109. }
 110.
-111. /**
-112. * Deployer class which inherits from general player class
-113.  * */
+111.
+112. // Deployer class which inherits from general player class
+113.  
 114. export class Deployer extends Player {
 115.  setWager(wager) {
 116.    this.wager = wager;
@@ -885,9 +885,9 @@ In the React App navigate to `battleship-main/src/factories/playerFactory.js`. W
 24. 
 25. import secret from "../../secret";
 26. 
-27. /***
-28.  * REACH
-29.  */
+27. 
+28.  // REACH
+29. 
 30. import { loadStdlib } from "@reach-sh/stdlib";
 31. import { ALGO_MyAlgoConnect as MyAlgoConnect } from "@reach-sh/stdlib";
 32. const reach = loadStdlib((process.env.REACH_CONNECTOR_MODE = "ALGO-live"));
