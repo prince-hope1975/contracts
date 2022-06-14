@@ -199,9 +199,9 @@ The application is beginning to take shape. We have defined the params and helpe
 48.    interact.acceptWager(wager);
 49.  });
 50.
-51.  /** 
-52.   * Make sure neither parties have acces to each other board
-53.   */
+51.   
+52.   // Make sure neither parties have acces to each other board
+53.  
 54.  unknowable(Bob, Alice(board));
 55.  unknowable(Alice, Bob(board));
 56.
