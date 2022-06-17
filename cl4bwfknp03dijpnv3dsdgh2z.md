@@ -182,7 +182,7 @@ From here we define the player's interact functions and create helper functions.
 - Line 30 initializes a function `countShips` that takes in an array of booleans and counts the number of true elements, to help determine if all the ships have been hit.
 - Line 33 initializes a function `winner` that calculates the winner of the game.
 
-The application is beginning to take shape. We have defined the params and helper functions that will be used throughout the, now we begin the implementation.  
+The application is beginning to take shape. We have defined the parameters and helper functions that will be used throughout the reach contract, now we begin the implementation.  
 ```js
 36.  Alice.only(() => {
 37.    const board = declassify(interact.getBoard());
@@ -275,7 +275,7 @@ Moving forward to the main application logic, we have a loop that will run until
 112.  }
 
 ```
-**NOTE: REACH VARIABLES ARE IMMUTABLE BY DEFAULT AND CAN NOT BE CHANGED EXCEPT AT THE BEGINNING OF A LOOP. THIS IS DONE TO ENHANCE PERFORMANCE AND FOR GAS OPTIMIZATIONS**  
+**NOTE: REACH VARIABLES ARE IMMUTABLE BY DEFAULT AND CAN NOT BE CHANGED EXCEPT PRECEDING THE CONTINUATION OF A LOOP (i.e BEFORE  A `CONTINUE`). VARs CAN ONLY BE DECLARED AT THE BEGINING OF A LOOP. THIS RESTRICTION IS PUT IN PLACE FOR SECURITY REASONS**  
 Moving on in our application implementation...
 - Line 62 declares a Tuple named `statement` that stores different variables used thorough out the execution of the code.
 - Line 63 declares the `invariant` block of the loop. This is a condition that will remain true regardless of the steps taken in the loop. As for our use, we declare that the balance in the contract will always be equal to twice the wager amount.
@@ -285,7 +285,7 @@ Moving on in our application implementation...
 - Lines 78 to 87, Bob gets his hand from the front end as well as doing a comparison to check if Alice's hand was correct. If it's correct Bob updates his `Ship` variable. After all the steps Bob publishes both the updated value of the ship and his hand, that is `BobShips` and `BobHand`.
 - Lines 91 to 100, Alice also does a comparison with her board and Bob's hand. After all the checks and comparisons, Alice publishes the "ship" variable to be used elsewhere in the application.
 - Lines 102 and 103 use the function declared earlier on line 30, to count and store the number of ships that have been hit on each participant board.
-- Lines 105 to 110 show how we redeclare the statement variable and input new values.
+- Lines 105 to 110 show how we mutate the statement variable and input new values.
 
 That is all the logic needed in the loop, for the game to run.
 
@@ -462,10 +462,10 @@ Our code works perfectly fine as it is now. But can be implemented and represent
 
 ## Testing
 
-We test our application by creating a file `index.mjs` in the same directory as the `index.rsh`
+We test our application by editing the `index.mjs` file that was created when we ran
 
 ```bash
-touch index.mjs
+../reach init
 ```
 
 We define our test data to use for simulating user input and data
@@ -502,12 +502,12 @@ The player choice array contains all the moves the test suite will guess on the 
 21. const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
 ```
 The above code block does the following
-- We load the reach standard library on line 14
-- On line 15 we create a starting balance for each player
-- On lines 17 and 18 we create two test accounts and fund them programmatically
-- On line 20 we create a `getBalance` helper function we use later in the application.
-- On lines 23 and 24 we get the balances of the accounts before they interact with the contract we wrote in the `index.rsh`.
-- On line 25 participant  `Alice`   deploys the contract and Bob attaches to that contract on line 26
+- We load the reach standard library on line 9
+- On line 10 we create a starting balance for each player
+- On lines 12 and 13 we create two test accounts and fund them programmatically
+- On line 15 we create a `getBalance` helper function we use later in the application.
+- On lines 17 and 18 we get the balances of the accounts before they interact with the contract we wrote in the `index.rsh`.
+- On line 20 participant  `Alice   deploys the contract and Bob attaches to that contract on line 21
 
 Now let's define the equivalent of the `common` variable in our `index.rsh` file. We name it `Player` instead and it will mirror the `common` variable.
 The Player function will return an object and will be spread to both participant's interact objects.
