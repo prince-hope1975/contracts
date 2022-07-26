@@ -322,7 +322,7 @@ That being said we can commence
   _Learn more about Types [Here](https://docs.reach.sh/rsh/compute/#rsh_Object)_
 - On line 59 we create a const `deployerObj` which houses the params, we will use as a default value for our APIs that are interacting with the contract.
 
-## MAIN LOGIC
+## Main Logic
 
 This is where things get serious, We have been working on our application so far but have not really implemented any logic used in an actual pyramid scheme. Pay close attention because this is where things get serious.
 
@@ -1317,7 +1317,7 @@ A quick run-through of our application.
   ```
 - Proceed to delete our button component that spans from lines 70 to 81.
 
-### DISCUSSION ON STORAGE
+### Discussions on Storage
 
 For our application to be useful it needs a way to keep track of a few things in our contracts like who registered, what is their address and other relevant info. Blockchains are great for several things but when it comes to storing information, they might not be the best option out there, so we will consider a few methods when storing our data.
 
